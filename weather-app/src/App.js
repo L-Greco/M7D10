@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+import { Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { Col, Container, Row } from 'react-bootstrap'
+// Css related imports
+import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
-
+import SearchBar from './components/SearchBar';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Container>
+        <Row>
+          <Col id="heading" sm={12} className="text-center mt-5">
+            <Link to="/">
+              <h1>What is the weather?</h1>
+            </Link>
+            <SearchBar />
+
+          </Col>
+        </Row>
+        <hr />
+        {/* <Route path="/" exact component={JobList} />
+      <Route path="/Company/:company" exact render={(routerProps) => <CompanyDetail {...routerProps} />} /> */}
+      </Container>
+    </Router>
   );
 }
 
